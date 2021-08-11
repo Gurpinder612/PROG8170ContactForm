@@ -128,8 +128,10 @@ const savePerson = () => {
       };
     
       storage.set(id, person);
+      
       displayPerson(person);
       showDiv("display");
+      
     }
     };
     
@@ -162,6 +164,7 @@ const savePerson = () => {
     };
     
     const displayPerson = (person) => {
+      
       const errorMessage = document.getElementById("error");
       errorMessage.innerHTML=null;
       const personElement = document.getElementById("person");
@@ -211,14 +214,14 @@ const savePerson = () => {
   } if (pcodeElement =="" || pcodeElement== null) {
     Message+=" Postal code is Required!\n";
   }
-   if(pcodeElement !="" || pcodeElement != null){
+   else if(pcodeElement !="" || pcodeElement != null){
     PostalCode(pcodeElement);
   }
      
 if (phonenoElement =="" || phonenoElement== null) {
-      Message+=" Phone number is Required!\n";
+      Message+=" Phone Number is Required!\n";
       }
-  if(phonenoElement !="" || phonenoElement != null)
+  else if(phonenoElement !="" || phonenoElement != null)
   {
     phonenumber(phonenoElement);
   }
